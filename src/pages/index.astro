@@ -1,11 +1,53 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<main>
+  <section class="hero">
+    <p class="eyebrow">Portfolio in progress</p>
+    <h1>Tessa Rouse</h1>
+    <p class="subtitle">Master of Public Administration Candidate</p>
+    <p class="description">
+      A professional portfolio featuring research, policy analysis, academic work,
+      and public service interests is coming soon.
+    </p>
+  </section>
+</main>
+
+<style>
+  main {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    font-family: system-ui, sans-serif;
+    background: #faf7ff;
+    color: #1f1730;
+  }
+
+  .hero {
+    max-width: 720px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    color: #7c3aed;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    margin: 0.25rem 0;
+  }
+
+  .subtitle {
+    font-size: 1.35rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+</style>
