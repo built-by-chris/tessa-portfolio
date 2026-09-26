@@ -4,7 +4,7 @@ summary: "A public administration analysis of the PACT Act examining how expande
 date: 2026-06-26
 category: "Policy Analysis"
 featured: true
-public: false
+public: true
 institution: "Arizona State University"
 course: "PAF 503 – Public Affairs"
 format: "Policy Change Analysis"
@@ -54,5 +54,3 @@ The analysis demonstrates a central challenge in public administration: a policy
 ## Portfolio context
 
 Originally completed as a graduate policy-change analysis for **PAF 503 – Public Affairs** at **Arizona State University**.
-
-> **Publication status:** Private portfolio draft. The original paper is being reviewed and formatted before public release.
