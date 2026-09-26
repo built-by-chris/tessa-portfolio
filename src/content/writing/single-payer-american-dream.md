@@ -4,7 +4,7 @@ summary: "A senior political science capstone examining the evolution of U.S. he
 date: 2025-11-30
 category: "Research"
 featured: true
-public: false
+public: true
 institution: "American Military University"
 course: "POLS 497 – Senior Seminar in Political Science"
 format: "Senior Capstone"
@@ -54,4 +54,3 @@ For the portfolio, it serves a different purpose from shorter policy-analysis pi
 
 Completed as the senior capstone for **POLS 497 – Senior Seminar in Political Science** at **American Military University**.
 
-> **Publication status:** Private portfolio draft. A web overview and full-paper presentation are being prepared before public release.
