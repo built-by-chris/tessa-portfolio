@@ -1,53 +1,77 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<main>
-  <section class="hero">
-    <p class="eyebrow">Portfolio in progress</p>
-    <h1>Tessa Rouse</h1>
-    <p class="subtitle">Master of Public Administration Candidate</p>
-    <p class="description">
-      A professional portfolio featuring research, policy analysis, academic work,
-      and public service interests is coming soon.
-    </p>
+<BaseLayout
+  title="Tessa Rouse"
+  description="Professional portfolio of Tessa Rouse, featuring public administration, policy analysis, research, and public service work."
+>
+  <section class="page-section hero">
+    <div class="container">
+      <p class="eyebrow">Portfolio in progress</p>
+      <h1>Tessa Rouse</h1>
+      <p class="lede">Master of Public Administration Candidate</p>
+      <p>
+        A professional portfolio featuring research, policy analysis, academic work,
+        and public service interests is in development.
+      </p>
+      <div class="actions">
+        <a class="button" href="/writing">Explore writing</a>
+        <a href="/about">About Tessa</a>
+      </div>
+    </div>
   </section>
-</main>
+
+  <section class="page-section">
+    <div class="container">
+      <p class="eyebrow">Focus</p>
+      <div class="card-grid">
+        <article class="card">
+          <h2>Policy analysis</h2>
+          <p>Research and analysis focused on public institutions, policy design, and implementation.</p>
+        </article>
+        <article class="card">
+          <h2>Public administration</h2>
+          <p>Graduate work examining governance, ethics, organizations, and public-service practice.</p>
+        </article>
+        <article class="card">
+          <h2>Selected writing</h2>
+          <p>A curated public collection of academic and professional work will be added as pieces are reviewed for publication.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
 
 <style>
-  main {
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-    padding: 2rem;
-    font-family: system-ui, sans-serif;
-    background: #faf7ff;
-    color: #1f1730;
-  }
-
   .hero {
-    max-width: 720px;
-    text-align: center;
+    padding-top: clamp(5rem, 12vw, 9rem);
   }
 
-  .eyebrow {
-    color: #7c3aed;
+  .actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    border-radius: 0.7rem;
+    background: var(--color-text);
+    color: white;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
+    text-decoration: none;
   }
 
-  h1 {
-    font-size: clamp(3rem, 8vw, 6rem);
-    margin: 0.25rem 0;
+  .button:hover {
+    text-decoration: none;
   }
 
-  .subtitle {
-    font-size: 1.35rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .description {
-    font-size: 1.1rem;
-    line-height: 1.6;
+  .card h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
   }
 </style>
