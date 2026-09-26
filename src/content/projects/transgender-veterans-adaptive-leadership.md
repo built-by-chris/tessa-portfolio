@@ -3,7 +3,7 @@ title: "Preserving Equitable Access for Transgender Veterans"
 summary: "An adaptive leadership plan for VA care coordination that moves from organizational diagnosis to stakeholder engagement, pilot implementation, feedback systems, and measurable access outcomes."
 date: 2026-08-11
 featured: true
-public: false
+public: true
 institution: "Arizona State University"
 course: "PAF 574 – Diversity, Ethics, and Public Change"
 format: "Applied Leadership Project"
@@ -70,5 +70,3 @@ It also illustrates a broader public-management principle: organizations can for
 ## Portfolio context
 
 Originally completed as an applied leadership project for **PAF 574 – Diversity, Ethics, and Public Change** at **Arizona State University**.
-
-> **Publication status:** Private portfolio draft. Public framing and supporting materials are being reviewed before release.
