@@ -13,7 +13,8 @@ const {
   description = 'Professional portfolio of Tessa Rouse, featuring public administration, policy analysis, research, and public service work.',
 } = Astro.props;
 
-const pageTitle = title === 'Tessa Rouse' ? title : `${title} | Tessa Rouse`;
+const pageTitle = title === 'Tessa Rouse' ? 'Tessa Rouse | Public Administration & Policy' : `${title} | Tessa Rouse`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://tessarouse.me');
 ---
 
 <!doctype html>
@@ -23,9 +24,19 @@ const pageTitle = title === 'Tessa Rouse' ? title : `${title} | Tessa Rouse`;
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#fbf9fd" />
+    <meta name="theme-color" content="#f8f6fa" />
+    <meta name="color-scheme" content="light" />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Tessa Rouse" />
+    <meta name="twitter:card" content="summary" />
+
     <title>{pageTitle}</title>
   </head>
   <body>
