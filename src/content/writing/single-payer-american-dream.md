@@ -50,6 +50,20 @@ The capstone demonstrates long-form research across political theory, constituti
 
 For the portfolio, it serves a different purpose from shorter policy-analysis pieces: it demonstrates sustained research, synthesis across disciplines, and the ability to carry one research question through a substantially longer argument.
 
+
+## SSRN working paper
+
+An expanded working-paper version of this research is publicly available through the **Social Science Research Network (SSRN)**.
+
+**Single-Payer and the American Dream: The Role of Modern American Health Care (Working Paper)**  
+23 pages · Posted January 14, 2026
+
+As of **September 26, 2026**, SSRN reports **189 downloads** and **324 abstract views**.
+
+[View the working paper on SSRN →](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5930155)
+
+DOI: [10.2139/ssrn.5930155](https://doi.org/10.2139/ssrn.5930155)
+
 ## Portfolio context
 
 Completed as the senior capstone for **POLS 497 – Senior Seminar in Political Science** at **American Military University**.
