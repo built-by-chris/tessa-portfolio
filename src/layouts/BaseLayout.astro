@@ -16,6 +16,15 @@ const {
 const pageTitle = title === 'Tessa Rouse' ? 'Tessa Rouse | Public Administration & Policy' : `${title} | Tessa Rouse`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://tessarouse.me');
 const socialImageURL = new URL('/social-card.png', Astro.site ?? 'https://tessarouse.me');
+const isHomepage = Astro.url.pathname === '/';
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://tessarouse.me/#website',
+  url: 'https://tessarouse.me/',
+  name: 'Tessa Rouse',
+  alternateName: 'Tessa Rouse Portfolio',
+};
 ---
 
 <!doctype html>
@@ -46,6 +55,12 @@ const socialImageURL = new URL('/social-card.png', Astro.site ?? 'https://tessar
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageURL} />
     <meta name="twitter:image:alt" content="Tessa Rouse — Public Administration & Policy. Public problems deserve careful analysis." />
+
+    {
+      isHomepage && (
+        <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+      )
+    }
 
     <title>{pageTitle}</title>
   </head>
