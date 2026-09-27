@@ -56,7 +56,7 @@ For the portfolio, it serves a different purpose from shorter policy-analysis pi
 An expanded working-paper version of this research is publicly available through the **Social Science Research Network (SSRN)**.
 
 **Single-Payer and the American Dream: The Role of Modern American Health Care (Working Paper)**  
-23 pages · Posted January 14, 2026
+23 pages
 
 As of **September 26, 2026**, SSRN reports **189 downloads** and **324 abstract views**.
 
@@ -67,4 +67,3 @@ DOI: [10.2139/ssrn.5930155](https://doi.org/10.2139/ssrn.5930155)
 ## Portfolio context
 
 Completed as the senior capstone for **POLS 497 – Senior Seminar in Political Science** at **American Military University**.
-

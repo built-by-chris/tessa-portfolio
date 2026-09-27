@@ -69,7 +69,12 @@ const date = entry.data.date
     <section class="page-section article-body">
       <div class="container">
         <div class="prose">
+          <p class="adaptation-note">This page adapts an academic project for the portfolio. It summarizes the work and its methods; the original document is not published here.</p>
           <Content />
+          <nav class="article-next" aria-label="After this project">
+            <a class="text-link" href="/projects">More projects</a>
+            <a class="text-link" href="/contact">Get in touch</a>
+          </nav>
         </div>
       </div>
     </section>
@@ -77,6 +82,22 @@ const date = entry.data.date
 </BaseLayout>
 
 <style>
+  .adaptation-note {
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--color-accent);
+    background: var(--color-accent-soft);
+    font-size: 0.95rem;
+  }
+
+  .article-next {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-border);
+  }
+
   .article-header {
     padding-bottom: clamp(3rem, 6vw, 5rem);
   }
