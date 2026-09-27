@@ -1,0 +1,67 @@
+backend:
+  name: github
+  repo: built-by-chris/tessa-portfolio
+  branch: main
+  base_url: https://cms-auth.tessarouse.me
+  auth_endpoint: auth
+  site_domain: tessarouse.me
+
+site_url: https://tessarouse.me
+display_url: https://tessarouse.me
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: writing
+    label: Writing
+    label_singular: Writing piece
+    folder: src/content/writing
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{title}} · {{category}} · {{date}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Category, name: category, widget: string }
+      - { label: Featured on homepage, name: featured, widget: boolean, default: false }
+      - { label: Public, name: public, widget: boolean, default: false, hint: "Leave off while drafting. Turn on only when this piece is ready to appear on the public site." }
+      - { label: Institution, name: institution, widget: string, required: false }
+      - { label: Course, name: course, widget: string, required: false }
+      - { label: Format, name: format, widget: string, required: false }
+      - { label: Source document, name: sourceDocument, widget: string, required: false }
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        default: []
+      - { label: Body, name: body, widget: markdown }
+
+  - name: projects
+    label: Projects
+    label_singular: Project
+    folder: src/content/projects
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{title}} · {{date}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+      - { label: Featured on homepage, name: featured, widget: boolean, default: false }
+      - { label: Public, name: public, widget: boolean, default: false, hint: "Leave off while drafting. Turn on only when this project is ready to appear on the public site." }
+      - { label: Institution, name: institution, widget: string, required: false }
+      - { label: Course, name: course, widget: string, required: false }
+      - { label: Format, name: format, widget: string, required: false }
+      - { label: Source document, name: sourceDocument, widget: string, required: false }
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        default: []
+      - { label: Body, name: body, widget: markdown }
