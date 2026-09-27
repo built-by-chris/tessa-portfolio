@@ -41,7 +41,7 @@ const formatDate = (date?: Date) =>
         <p class="eyebrow">Public administration · policy · research</p>
         <h1>Public problems deserve careful analysis.</h1>
         <p class="lede">
-          I'm Tessa Rouse, a Master of Public Administration candidate building a body of
+          I'm Tessa Rouse, an MPA candidate at Arizona State University building a body of
           work around policy analysis, governance, research, and public service.
         </p>
         <div class="actions">
@@ -50,20 +50,20 @@ const formatDate = (date?: Date) =>
         </div>
       </div>
 
-      <aside class="profile-card" aria-label="Portfolio overview">
-        <p class="profile-label">Current portfolio</p>
+      <aside class="profile-card" aria-label="Professional snapshot">
+        <p class="profile-label">At a glance</p>
         <dl>
           <div>
-            <dt>Focus</dt>
-            <dd>Public administration & policy</dd>
+            <dt>Graduate study</dt>
+            <dd>MPA · Arizona State University</dd>
           </div>
           <div>
-            <dt>Work</dt>
-            <dd>Analysis, research & writing</dd>
+            <dt>Foundation</dt>
+            <dd>B.A. Political Science · Cum Laude</dd>
           </div>
           <div>
-            <dt>Status</dt>
-            <dd>Growing collection</dd>
+            <dt>Background</dt>
+            <dd>U.S. Army veteran</dd>
           </div>
         </dl>
       </aside>
@@ -108,7 +108,7 @@ const formatDate = (date?: Date) =>
       <div class="work-intro">
         <div>
           <p class="eyebrow">Selected work</p>
-          <h2>A curated record, not an assignment archive.</h2>
+          <h2>Selected work across policy, research, and public administration.</h2>
         </div>
         <div class="work-copy">
           <p class="lede">
@@ -226,15 +226,12 @@ const formatDate = (date?: Date) =>
   }
 
   .section-heading {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: end;
-    gap: 3rem;
+    max-width: 46rem;
     margin-bottom: 2.5rem;
   }
 
   .section-heading h2 {
-    margin-bottom: 0;
+    margin-bottom: 1rem;
   }
 
   .section-heading > p {
@@ -308,7 +305,6 @@ const formatDate = (date?: Date) =>
 
   @media (max-width: 820px) {
     .hero-grid,
-    .section-heading,
     .work-intro {
       grid-template-columns: 1fr;
     }
@@ -320,10 +316,6 @@ const formatDate = (date?: Date) =>
 
     .profile-card {
       width: min(100%, 30rem);
-    }
-
-    .section-heading {
-      gap: 1rem;
     }
 
     .focus-grid {

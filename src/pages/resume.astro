@@ -56,8 +56,9 @@ const experience = [
   <section class="page-section resume-hero">
     <div class="container hero-grid">
       <div>
-        <p class="eyebrow">Résumé</p>
-        <h1>Experience built around systems, operations, and public service.</h1>
+        <p class="eyebrow">Professional background</p>
+        <h1>Résumé</h1>
+        <p class="page-tagline">Systems, operations, analysis, and public service.</p>
       </div>
       <div>
         <p class="lede">
@@ -192,6 +193,13 @@ const experience = [
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     gap: clamp(2.5rem, 8vw, 8rem);
     align-items: end;
+  }
+
+  .page-tagline {
+    margin: 0.8rem 0 0;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    font-weight: 750;
   }
 
   .hero-links {
