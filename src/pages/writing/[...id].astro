@@ -20,11 +20,6 @@ const date = new Intl.DateTimeFormat('en-US', {
   day: 'numeric',
 }).format(entry.data.date);
 
-const contextItems = [
-  entry.data.format,
-  entry.data.institution,
-  entry.data.course,
-].filter(Boolean);
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.summary}>
@@ -76,6 +71,7 @@ const contextItems = [
     <section class="page-section article-body">
       <div class="container">
         {entry.id === 'pact-act-public-administration-analysis' && <CaseStudyVisual variant="pact" />}
+        {entry.id === 'single-payer-american-dream' && <CaseStudyVisual variant="capstone" />}
         <div class="prose">
           <Content />
         </div>
