@@ -86,6 +86,29 @@ const aboutPhoto = '/images/tessa-about-2.jpeg';
           administration asks the question I find even more compelling: <em>how do we make those
           institutions work well in practice?</em>
         </p>
+
+        <figure class="credential-card">
+          <img
+            src="/images/amu-diploma.svg"
+            alt="American Military University diploma awarded to Tessa Rouse for a Bachelor of Arts in Political Science, Cum Laude, on February 1, 2026"
+            width="900"
+            height="707"
+            loading="lazy"
+          />
+          <figcaption>
+            <div>
+              <p class="credential-label">Awarded degree</p>
+              <strong>B.A. Political Science · Cum Laude</strong>
+              <span>American Military University · February 1, 2026</span>
+            </div>
+            <a
+              class="text-link"
+              href="https://www.parchment.com/u/s/6mIR"
+              target="_blank"
+              rel="noreferrer"
+            >Verify credential ↗</a>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -314,7 +337,7 @@ const aboutPhoto = '/images/tessa-about-2.jpeg';
 
   .hero-copy p:not(.lede),
   .story-copy p,
-  .academic-copy p,
+  .academic-copy > p,
   .personal-copy p:not(.lede) {
     color: var(--color-muted);
   }
@@ -340,6 +363,59 @@ const aboutPhoto = '/images/tessa-about-2.jpeg';
     padding: 1.5rem 0;
     border-bottom: 1px solid var(--color-border);
     font-size: 1.05rem;
+  }
+
+  .credential-card {
+    margin: 2rem 0 0;
+    overflow: hidden;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 1.1rem;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .credential-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: white;
+  }
+
+  .credential-card figcaption {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    align-items: end;
+    padding: 1rem 1.15rem 1.1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .credential-card figcaption div {
+    display: grid;
+    gap: 0.18rem;
+  }
+
+  .credential-label {
+    margin: 0 0 0.15rem;
+    color: var(--color-accent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .credential-card figcaption strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+  }
+
+  .credential-card figcaption span {
+    color: var(--color-muted);
+    font-size: 0.86rem;
+  }
+
+  .credential-card .text-link {
+    flex: 0 0 auto;
   }
 
   .academic-section,
@@ -498,6 +574,11 @@ const aboutPhoto = '/images/tessa-about-2.jpeg';
 
     .section-title {
       position: static;
+    }
+
+    .credential-card figcaption {
+      align-items: start;
+      flex-direction: column;
     }
 
     .focus-grid {
