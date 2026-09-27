@@ -5,6 +5,9 @@ backend:
   base_url: https://cms-auth.tessarouse.me
   auth_endpoint: auth
   site_domain: tessarouse.me
+  squash_merges: true
+
+publish_mode: editorial_workflow
 
 site_url: https://tessarouse.me
 display_url: https://tessarouse.me
