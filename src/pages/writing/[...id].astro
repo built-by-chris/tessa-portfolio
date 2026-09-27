@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseStudyVisual from '../../components/CaseStudyVisual.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('writing', ({ data }) => data.public);
@@ -74,6 +75,7 @@ const contextItems = [
 
     <section class="page-section article-body">
       <div class="container">
+        {entry.id === 'pact-act-public-administration-analysis' && <CaseStudyVisual variant="pact" />}
         <div class="prose">
           <Content />
         </div>
