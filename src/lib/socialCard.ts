@@ -108,7 +108,7 @@ export async function renderWorkSocialCard({ title, kicker }: SocialCardOptions)
         <path d="M0 272h168"/>
       </g>
 
-      <text x="1014" y="521" text-anchor="middle" fill="#4c2967" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" letter-spacing="2.4">${panelLabel}</text>
+      <text x="1014" y="521" text-anchor="middle" fill="#4c2967" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" letter-spacing="2.4">${escapeXml(panelLabel)}</text>
       <text x="1014" y="552" text-anchor="middle" fill="#665b6d" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1.8">POLICY · EQUITY · VETERAN · SERVICE</text>
 
       <rect x="0" y="0" width="1200" height="630" fill="none" stroke="#ddd5e1" stroke-width="2"/>
