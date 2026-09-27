@@ -134,16 +134,65 @@ const aboutPhoto = '/images/tessa-about-2.jpeg';
 
       <div class="now-card">
         <p class="lede">Master of Public Administration · Arizona State University</p>
-        <p>
-          I'm currently focused on public policy analysis, administrative systems, research
-          methods, and the implementation of public programs. My recent work examines veterans
-          policy, health policy, organizational capacity, and how administrative decisions shape
-          service delivery.
+        <p class="now-intro">
+          Right now, most of my attention is split between graduate study, applied policy
+          research, and building toward the kind of public-sector work I want to do long term.
         </p>
-        <p>
-          Alongside graduate study, I'm building toward policy, program, and administrative
-          analyst work where research, operations, and public service intersect.
-        </p>
+
+        <div class="now-list">
+          <article>
+            <span>01</span>
+            <div>
+              <h3>This semester</h3>
+              <p>
+                My Fall 2026 coursework is centered on <strong>Public Service and Ethics</strong>
+                and <strong>Public Policy Analysis</strong>, with continued work in research
+                methods, statistics, implementation, and evidence-based decision-making.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <span>02</span>
+            <div>
+              <h3>Researching</h3>
+              <p>
+                I'm especially interested in veterans policy, health policy, administrative
+                capacity, organizational change, and the gap between formal policy and the
+                experience people have when they encounter public systems.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <span>03</span>
+            <div>
+              <h3>Building toward</h3>
+              <p>
+                I'm pursuing policy, program, management, and administrative analyst work where
+                research, operations, data quality, and public service come together to improve
+                implementation and service delivery.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <span>04</span>
+            <div>
+              <h3>On the desk</h3>
+              <p>
+                I'm continuing to develop this portfolio as a living record of my graduate work,
+                research, and applied projects—adding pieces when they demonstrate something new
+                about how I analyze public problems.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="now-links">
+          <a class="text-link" href="/writing">Recent writing</a>
+          <a class="text-link" href="/projects">Current projects</a>
+        </div>
       </div>
     </div>
   </section>
@@ -305,6 +354,50 @@ const aboutPhoto = '/images/tessa-about-2.jpeg';
 
   .now-card p:not(.lede) {
     color: var(--color-muted);
+  }
+
+  .now-intro {
+    margin-bottom: 1.4rem;
+  }
+
+  .now-list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .now-list article {
+    display: grid;
+    grid-template-columns: 2.25rem 1fr;
+    gap: 0.9rem;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .now-list span {
+    color: var(--color-accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.82rem;
+    padding-top: 0.12rem;
+  }
+
+  .now-list h3 {
+    margin-bottom: 0.35rem;
+    font-size: 1.08rem;
+  }
+
+  .now-list p {
+    margin: 0;
+    font-size: 0.94rem;
+  }
+
+  .now-list strong {
+    color: var(--color-text);
+  }
+
+  .now-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.4rem;
+    margin-top: 1.2rem;
   }
 
   .now-card p:last-child {
