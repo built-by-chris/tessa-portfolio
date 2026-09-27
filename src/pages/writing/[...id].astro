@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseStudyVisual from '../../components/CaseStudyVisual.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('writing', ({ data }) => data.public);
@@ -19,11 +20,6 @@ const date = new Intl.DateTimeFormat('en-US', {
   day: 'numeric',
 }).format(entry.data.date);
 
-const contextItems = [
-  entry.data.format,
-  entry.data.institution,
-  entry.data.course,
-].filter(Boolean);
 ---
 
 <BaseLayout
@@ -79,6 +75,8 @@ const contextItems = [
 
     <section class="page-section article-body">
       <div class="container">
+        {entry.id === 'pact-act-public-administration-analysis' && <CaseStudyVisual variant="pact" />}
+        {entry.id === 'single-payer-american-dream' && <CaseStudyVisual variant="capstone" />}
         <div class="prose">
           <p class="adaptation-note">This page is a portfolio adaptation of the work described below. A link to the original appears where it is publicly available.</p>
           <Content />

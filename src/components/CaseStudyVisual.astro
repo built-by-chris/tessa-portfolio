@@ -1,0 +1,295 @@
+---
+interface Props {
+  variant: 'pact' | 'adaptive' | 'capstone';
+}
+
+const { variant } = Astro.props;
+---
+
+{variant === 'pact' ? (
+  <aside class="case-visual" aria-labelledby="pact-visual-title">
+    <div class="visual-heading">
+      <p class="visual-eyebrow">At a glance</p>
+      <h2 id="pact-visual-title">Lower claimant burden. Higher implementation demand.</h2>
+    </div>
+
+    <div class="balance-grid">
+      <section>
+        <span class="visual-label">For veterans</span>
+        <strong>Expanded presumptions can simplify the path to benefits.</strong>
+        <p>Less individualized causation to prove, clearer eligibility pathways, and reduced evidentiary burden.</p>
+      </section>
+
+      <div class="balance-mark" aria-hidden="true">↔</div>
+
+      <section>
+        <span class="visual-label">For the VA</span>
+        <strong>Implementation capacity has to expand with eligibility.</strong>
+        <p>More claims, staffing and training needs, cross-system coordination, timeliness pressure, and oversight.</p>
+      </section>
+    </div>
+
+    <p class="visual-takeaway">
+      <strong>Key takeaway:</strong> A policy can reduce burden for the public while increasing the administrative burden on the institution responsible for carrying it out.
+    </p>
+  </aside>
+) : variant === 'adaptive' ? (
+  <aside class="case-visual" aria-labelledby="adaptive-visual-title">
+    <div class="visual-heading">
+      <p class="visual-eyebrow">Implementation model</p>
+      <h2 id="adaptive-visual-title">Turn implementation into a learning system.</h2>
+    </div>
+
+    <ol class="process-grid">
+      <li>
+        <span>01</span>
+        <div><strong>Navigate</strong><p>Map workflows, ownership gaps, bottlenecks, and handoffs.</p></div>
+      </li>
+      <li>
+        <span>02</span>
+        <div><strong>Engage</strong><p>Bring veterans and frontline stakeholders into the diagnosis.</p></div>
+      </li>
+      <li>
+        <span>03</span>
+        <div><strong>Test</strong><p>Pilot the care-navigation process and collect evidence.</p></div>
+      </li>
+      <li>
+        <span>04</span>
+        <div><strong>Correct</strong><p>Review results, revise the process, and decide what should scale.</p></div>
+      </li>
+    </ol>
+
+    <p class="measure-line">
+      <strong>Measure:</strong> referral completion · resolution time · information consistency · trust and navigation · corrective action
+    </p>
+    <p class="visual-note">Framework proposed in an August 2026 academic project.</p>
+  </aside>
+) : (
+  <aside class="case-visual" aria-labelledby="capstone-visual-title">
+    <div class="visual-heading">
+      <p class="visual-eyebrow">Research framework</p>
+      <h2 id="capstone-visual-title">How the capstone connects structure, history, and policy design.</h2>
+    </div>
+
+    <ol class="research-grid">
+      <li>
+        <span>01</span>
+        <div>
+          <strong>Constitutional interpretation</strong>
+          <p>General welfare, taxing and spending power, and the scope of federal authority.</p>
+        </div>
+      </li>
+      <li>
+        <span>02</span>
+        <div>
+          <strong>Federalism</strong>
+          <p>National coordination and state autonomy shape how health programs are structured and administered.</p>
+        </div>
+      </li>
+      <li>
+        <span>03</span>
+        <div>
+          <strong>Historical development</strong>
+          <p>Public and private insurance systems evolved through layered policy choices over time.</p>
+        </div>
+      </li>
+      <li>
+        <span>04</span>
+        <div>
+          <strong>Policy design</strong>
+          <p>Coverage, financing, administration, access, cost, and political feasibility interact in reform proposals.</p>
+        </div>
+      </li>
+    </ol>
+
+    <p class="visual-takeaway">
+      <strong>Key takeaway:</strong> Health reform is shaped not only by policy goals, but by constitutional structure, institutional history, and the division of authority between federal and state governments.
+    </p>
+    <p class="visual-note">Framework from a 2025 senior capstone in political science.</p>
+  </aside>
+)}
+
+<style>
+  .case-visual {
+    width: min(100%, 58rem);
+    margin: 0 auto 3rem;
+    padding: clamp(1.2rem, 2.5vw, 1.8rem);
+    border: 1px solid var(--color-border);
+    border-radius: 1.15rem;
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--color-accent-soft) 55%, white), white 65%);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .visual-heading {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .visual-eyebrow {
+    margin: 0;
+    color: var(--color-accent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .visual-heading h2 {
+    margin: 0;
+    font-size: clamp(1.35rem, 2.8vw, 2rem);
+    line-height: 1.1;
+  }
+
+  .balance-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.35rem 0;
+  }
+
+  .balance-grid section {
+    min-width: 0;
+  }
+
+  .visual-label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--color-accent);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .balance-grid strong,
+  .process-grid strong,
+  .research-grid strong {
+    display: block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.25;
+  }
+
+  .balance-grid p,
+  .process-grid p,
+  .research-grid p {
+    margin: 0.4rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .balance-mark {
+    display: grid;
+    width: 2.6rem;
+    height: 2.6rem;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-accent-dark);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+
+  .visual-takeaway,
+  .measure-line {
+    margin: 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-muted);
+    font-size: 0.9rem;
+  }
+
+  .visual-takeaway strong,
+  .measure-line strong {
+    color: var(--color-text);
+  }
+
+  .process-grid,
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 1.3rem 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .process-grid li,
+  .research-grid li {
+    display: grid;
+    grid-template-columns: 2.15rem 1fr;
+    gap: 0.65rem;
+    padding: 0.2rem 1rem;
+  }
+
+  .process-grid li + li,
+  .research-grid li + li {
+    border-left: 1px solid var(--color-border);
+  }
+
+  .process-grid span,
+  .research-grid span {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-accent-dark);
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.78rem;
+  }
+
+  .visual-note {
+    margin: 0.55rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.72rem;
+    font-style: italic;
+    text-align: right;
+  }
+
+  @media (max-width: 760px) {
+    .visual-heading {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+
+    .balance-grid {
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+    }
+
+    .balance-mark {
+      transform: rotate(90deg);
+      justify-self: center;
+    }
+
+    .process-grid,
+    .research-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .process-grid li,
+    .research-grid li {
+      padding: 0.9rem 0;
+    }
+
+    .process-grid li + li,
+    .research-grid li + li {
+      border-left: 0;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .visual-note {
+      text-align: left;
+    }
+  }
+</style>

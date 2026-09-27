@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseStudyVisual from '../../components/CaseStudyVisual.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('projects', ({ data }) => data.public);
@@ -73,6 +74,7 @@ const date = entry.data.date
 
     <section class="page-section article-body">
       <div class="container">
+        {entry.id === 'transgender-veterans-adaptive-leadership' && <CaseStudyVisual variant="adaptive" />}
         <div class="prose">
           <p class="adaptation-note">This page adapts an academic project for the portfolio. It summarizes the work and its methods; the original document is not published here.</p>
           <Content />
