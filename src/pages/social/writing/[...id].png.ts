@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content';
 import type { APIRoute, GetStaticPaths } from 'astro';
-import { renderWorkSocialCard } from '../../../../lib/socialCard';
+import { renderWorkSocialCard } from '../../../lib/socialCard';
 
 export const prerender = true;
 
