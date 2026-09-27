@@ -18,7 +18,12 @@ const date = entry.data.date
   : undefined;
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.summary}>
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.summary}
+  socialImage={`/social/projects/${entry.id}.png`}
+  socialImageAlt={`${entry.data.title} — ${entry.data.format ?? 'Project'}. Tessa Rouse portfolio.`}
+>
   <article>
     <header class="page-section article-header">
       <div class="container article-grid">
