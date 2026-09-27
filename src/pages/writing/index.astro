@@ -17,8 +17,9 @@ const formatDate = (date: Date) =>
   <section class="page-section page-intro">
     <div class="container intro-grid">
       <div>
-        <p class="eyebrow">Writing</p>
-        <h1>Selected work.</h1>
+        <p class="eyebrow">Selected work</p>
+        <h1>Writing</h1>
+        <p class="page-tagline">Policy analysis, research, and academic work.</p>
       </div>
       <p class="lede">
         A curated collection of policy analysis, research, and academic work adapted
@@ -71,6 +72,13 @@ const formatDate = (date: Date) =>
   .intro-grid h1,
   .intro-grid .lede {
     margin-bottom: 0;
+  }
+
+  .page-tagline {
+    margin: 0.8rem 0 0;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    font-weight: 750;
   }
 
   .collection-section {
