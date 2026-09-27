@@ -26,7 +26,12 @@ const contextItems = [
 ].filter(Boolean);
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.summary}>
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.summary}
+  socialImage={`/social/writing/${entry.id}.png`}
+  socialImageAlt={`${entry.data.title} — ${entry.data.category}. Tessa Rouse portfolio.`}
+>
   <article>
     <header class="page-section article-header">
       <div class="container article-grid">
