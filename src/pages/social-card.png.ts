@@ -40,7 +40,7 @@ export async function GET() {
       <text x="108" y="385" fill="#4c4053" font-family="Georgia, 'Times New Roman', serif" font-size="43" font-style="italic">Public problems deserve careful analysis.</text>
 
       <text x="108" y="503" fill="#665b6d" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="600" letter-spacing="5">tessarouse.me</text>
-      <path d="M313 495h44m-14-14 14 14-14 14" fill="none" stroke="#704095" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M360 495h44m-14-14 14 14-14 14" fill="none" stroke="#704095" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 
       <rect x="0" y="0" width="1200" height="630" fill="none" stroke="#dfd7e4" stroke-width="2"/>
     </svg>
