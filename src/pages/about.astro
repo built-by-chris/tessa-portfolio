@@ -123,6 +123,31 @@ const aboutPhoto = '/images/tessa-about-2.jpeg';
     </div>
   </section>
 
+
+  <section class="page-section now-section">
+    <div class="container now-grid">
+      <div>
+        <p class="eyebrow">Now</p>
+        <h2>What I'm working on right now.</h2>
+        <p class="now-updated">Updated September 2026</p>
+      </div>
+
+      <div class="now-card">
+        <p class="lede">Master of Public Administration · Arizona State University</p>
+        <p>
+          I'm currently focused on public policy analysis, administrative systems, research
+          methods, and the implementation of public programs. My recent work examines veterans
+          policy, health policy, organizational capacity, and how administrative decisions shape
+          service delivery.
+        </p>
+        <p>
+          Alongside graduate study, I'm building toward policy, program, and administrative
+          analyst work where research, operations, and public service intersect.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="page-section personal-section">
     <div class="container personal-grid">
       <div>
@@ -245,8 +270,45 @@ const aboutPhoto = '/images/tessa-about-2.jpeg';
   }
 
   .academic-section,
+  .now-section,
   .personal-section {
     background: color-mix(in srgb, var(--color-bg-deep) 58%, transparent);
+  }
+
+  .now-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2.5rem, 8vw, 8rem);
+    align-items: start;
+  }
+
+  .now-grid h2 {
+    max-width: 11ch;
+  }
+
+  .now-updated {
+    margin: 0.85rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.78rem;
+    font-weight: 750;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .now-card {
+    padding: clamp(1.4rem, 3vw, 2rem);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .now-card p:not(.lede) {
+    color: var(--color-muted);
+  }
+
+  .now-card p:last-child {
+    margin-bottom: 0;
   }
 
   .section-heading {
@@ -303,6 +365,7 @@ const aboutPhoto = '/images/tessa-about-2.jpeg';
     .hero-grid,
     .story-grid,
     .academic-grid,
+    .now-grid,
     .personal-grid,
     .section-heading {
       grid-template-columns: 1fr;
