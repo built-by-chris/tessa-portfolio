@@ -6,24 +6,53 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 
 const {
   title = 'Tessa Rouse',
   description = 'Professional portfolio of Tessa Rouse, featuring public administration, policy analysis, research, and public service work.',
+  noindex = false,
 } = Astro.props;
 
 const pageTitle = title === 'Tessa Rouse' ? 'Tessa Rouse | Public Administration & Policy' : `${title} | Tessa Rouse`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://tessarouse.me');
 const socialImageURL = new URL('/social-card.png', Astro.site ?? 'https://tessarouse.me');
 const isHomepage = Astro.url.pathname === '/';
-const websiteSchema = {
+const homepageSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  '@id': 'https://tessarouse.me/#website',
-  url: 'https://tessarouse.me/',
-  name: 'Tessa Rouse',
-  alternateName: 'Tessa Rouse Portfolio',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://tessarouse.me/#website',
+      url: 'https://tessarouse.me/',
+      name: 'Tessa Rouse',
+      alternateName: 'Tessa Rouse Portfolio',
+      description:
+        'Professional portfolio of Tessa Rouse, featuring public administration, policy analysis, research, and public service work.',
+      publisher: {
+        '@id': 'https://tessarouse.me/#person',
+      },
+    },
+    {
+      '@type': 'Person',
+      '@id': 'https://tessarouse.me/#person',
+      name: 'Tessa Rouse',
+      url: 'https://tessarouse.me/',
+      jobTitle: 'Master of Public Administration Candidate',
+      description:
+        'Public administration and policy professional focused on policy analysis, governance, research, and public service.',
+      sameAs: ['https://www.linkedin.com/in/tessa-rouse'],
+      knowsAbout: [
+        'Public administration',
+        'Policy analysis',
+        'Governance',
+        'Public service',
+        'Research',
+        'GIS and data analysis',
+      ],
+    },
+  ],
 };
 ---
 
@@ -33,6 +62,7 @@ const websiteSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#f8f6fa" />
     <meta name="color-scheme" content="light" />
@@ -58,7 +88,7 @@ const websiteSchema = {
 
     {
       isHomepage && (
-        <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+        <script type="application/ld+json" set:html={JSON.stringify(homepageSchema)} />
       )
     }
 
