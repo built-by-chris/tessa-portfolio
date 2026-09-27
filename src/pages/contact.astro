@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contact Tessa Rouse for professional, academic, and public-service inquiries."
+>
+  <section class="page-section contact-hero">
+    <div class="container contact-grid">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h1>Let’s talk.</h1>
+      </div>
+
+      <div class="contact-copy">
+        <p class="lede">
+          For professional, academic, research, or public-service inquiries, email is the
+          best way to reach me.
+        </p>
+
+        <a class="email-card" href="mailto:hello@tessarouse.me">
+          <span class="email-label">Email</span>
+          <strong>hello@tessarouse.me</strong>
+          <span class="email-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <div class="secondary-contact">
+          <p>
+            You can also find my professional profile and current experience on LinkedIn.
+          </p>
+          <a class="text-link" href="https://www.linkedin.com/in/tessa-rouse" rel="me">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section contact-note">
+    <div class="container note-grid">
+      <div>
+        <p class="eyebrow">A note on outreach</p>
+        <h2>Specific messages are welcome.</h2>
+      </div>
+      <p>
+        If you’re reaching out about a role, research question, portfolio piece, or potential
+        collaboration, a little context in the first message helps me respond more usefully.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-hero {
+    padding-top: clamp(5rem, 10vw, 9rem);
+    padding-bottom: clamp(5rem, 10vw, 8rem);
+  }
+
+  .contact-grid,
+  .note-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2.5rem, 8vw, 8rem);
+    align-items: end;
+  }
+
+  .contact-copy {
+    max-width: 40rem;
+  }
+
+  .email-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.25rem;
+    padding: 1.3rem 1.4rem;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 1rem;
+    background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+    color: var(--color-text);
+    text-decoration: none;
+    box-shadow: var(--shadow-soft);
+    transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+  }
+
+  .email-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+    background: var(--color-surface);
+    text-decoration: none;
+  }
+
+  .email-label {
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .email-card strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    font-weight: 600;
+  }
+
+  .email-arrow {
+    color: var(--color-accent-dark);
+    font-size: 1.2rem;
+  }
+
+  .secondary-contact {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .secondary-contact p {
+    margin-top: 0;
+    color: var(--color-muted);
+  }
+
+  .contact-note {
+    background: color-mix(in srgb, var(--color-bg-deep) 58%, transparent);
+  }
+
+  .note-grid {
+    align-items: start;
+  }
+
+  .note-grid h2 {
+    max-width: 10ch;
+  }
+
+  .note-grid > p {
+    margin-top: 0;
+    color: var(--color-muted);
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 760px) {
+    .contact-grid,
+    .note-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .email-card {
+      grid-template-columns: 1fr auto;
+    }
+
+    .email-label {
+      grid-column: 1 / -1;
+    }
+
+    .email-card strong {
+      overflow-wrap: anywhere;
+    }
+  }
+</style>

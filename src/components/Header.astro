@@ -1,0 +1,169 @@
+---
+const navItems = [
+  { href: '/about', label: 'About' },
+  { href: '/writing', label: 'Writing' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/resume', label: 'Résumé' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const pathname = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Tessa Rouse home">
+      <span class="brand-mark" aria-hidden="true">TR</span>
+      <span class="brand-copy">
+        <strong>Tessa Rouse</strong>
+        <span>Public administration & policy</span>
+      </span>
+    </a>
+
+    <nav aria-label="Primary navigation">
+      <ul>
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-border) 86%, transparent);
+    background: color-mix(in srgb, var(--color-bg) 86%, transparent);
+    backdrop-filter: blur(18px);
+  }
+
+  .header-inner {
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .brand-mark {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 999px;
+    background: var(--color-surface);
+    color: var(--color-accent-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    box-shadow: 0 6px 18px rgba(56, 35, 68, 0.06);
+  }
+
+  .brand-copy {
+    display: grid;
+    line-height: 1.15;
+  }
+
+  .brand-copy strong {
+    font-size: 0.96rem;
+  }
+
+  .brand-copy span {
+    margin-top: 0.2rem;
+    color: var(--color-muted);
+    font-size: 0.72rem;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  nav a {
+    position: relative;
+    display: inline-flex;
+    padding: 0.55rem 0.7rem;
+    border-radius: 0.6rem;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    background: var(--color-accent-soft);
+    color: var(--color-accent-dark);
+  }
+
+  nav a[aria-current='page'] {
+    color: var(--color-accent-dark);
+  }
+
+  nav a[aria-current='page']::after {
+    content: '';
+    position: absolute;
+    right: 0.7rem;
+    bottom: 0.25rem;
+    left: 0.7rem;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--color-accent);
+  }
+
+  @media (max-width: 780px) {
+    .site-header {
+      position: static;
+    }
+
+    .header-inner {
+      min-height: auto;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.85rem;
+      padding-block: 1rem;
+    }
+
+    nav {
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    ul {
+      width: max-content;
+      padding-bottom: 0.1rem;
+    }
+
+    nav a {
+      padding-inline: 0.55rem;
+    }
+  }
+</style>
