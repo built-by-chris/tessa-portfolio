@@ -231,6 +231,11 @@ const isActive = (href: string) =>
   }
 
   @media (max-width: 780px) {
+    /* The brand and menu button keep the lilac header; only the dropdown is pale. */
+    .site-header[data-menu-open='true'] .header-inner {
+      padding-bottom: 0;
+    }
+
     .header-inner {
       min-height: auto;
       display: grid;
@@ -250,9 +255,27 @@ const isActive = (href: string) =>
     nav {
       display: none;
       grid-column: 1 / -1;
+      min-width: 0;
       width: 100%;
-      padding-top: 0.65rem;
+      margin-top: -0.8rem;
+      padding: 1.45rem 0 0.85rem;
+      position: relative;
+      isolation: isolate;
+    }
+
+    /* Paint edge to edge without stretching the grid item or causing overflow. */
+    nav::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50%);
+      background: var(--color-bg);
       border-top: 1px solid var(--color-border);
+      pointer-events: none;
     }
 
     .site-header[data-menu-open='true'] nav {

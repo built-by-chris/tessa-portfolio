@@ -30,6 +30,33 @@ test('mobile menu opens and closes with Escape', async ({ page }, testInfo) => {
   await expect(toggle).toHaveAccessibleName('Open navigation menu');
 });
 
+test('lilac brand bar stays visible above a pale full-width mobile dropdown', async ({ page }, testInfo) => {
+  await page.goto('/');
+  const header = page.locator('.site-header');
+  const background = async (element) => element.evaluate((node) => getComputedStyle(node).backgroundColor);
+
+  expect(await background(header)).toBe('rgb(231, 222, 237)');
+
+  if (testInfo.project.name === 'mobile') {
+    await page.locator('.menu-toggle').click();
+    await expect(header).toHaveAttribute('data-menu-open', 'true');
+
+    const nav = header.getByRole('navigation', { name: 'Primary navigation' });
+    await expect(nav).toBeVisible();
+    expect(await background(header)).toBe('rgb(231, 222, 237)');
+    const dropdown = await nav.evaluate((element) => {
+      const style = getComputedStyle(element, '::before');
+      return {
+        background: style.backgroundColor,
+        width: Number.parseFloat(style.width),
+        viewport: window.innerWidth,
+      };
+    });
+    expect(dropdown.background).toBe('rgb(248, 246, 250)');
+    expect(dropdown.width).toBeCloseTo(dropdown.viewport, 0);
+  }
+});
+
 for (const route of ['/', '/about/', '/resume/', '/contact/']) {
   test(route + ' has no automated WCAG A/AA violations', async ({ page }) => {
     await page.goto(route);
