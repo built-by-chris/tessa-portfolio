@@ -1,0 +1,107 @@
+---
+import type { RelatedEntry } from '../lib/relatedWork';
+
+interface Props {
+  items: RelatedEntry[];
+}
+
+const { items } = Astro.props;
+---
+
+{items.length > 0 && (
+  <aside class="related-work" aria-labelledby="related-work-title">
+    <p class="eyebrow">Keep exploring</p>
+    <h2 id="related-work-title">Related work</h2>
+    <div class="related-grid">
+      {items.map((item) => (
+        <article>
+          <p class="related-type">{item.label}</p>
+          <h3><a href={item.href}>{item.title} <span aria-hidden="true">↗</span></a></h3>
+          <p class="related-summary">{item.summary}</p>
+          <p class="related-topics">Shared topics: {item.sharedTags.slice(0, 2).join(', ')}</p>
+        </article>
+      ))}
+    </div>
+  </aside>
+)}
+
+<style>
+  .related-work {
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--color-border-strong);
+  }
+
+  .related-work h2 {
+    margin-bottom: 1.4rem;
+    font-size: clamp(1.8rem, 3vw, 2.15rem);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.85rem;
+    background: var(--color-surface-soft);
+  }
+
+  .related-type {
+    margin: 0 0 0.75rem;
+    color: var(--color-accent);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin: 0 0 0.8rem;
+    font-size: 1.3rem;
+    line-height: 1.25;
+  }
+
+  h3 a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  h3 a:hover {
+    color: var(--color-accent-dark);
+    text-decoration: underline;
+  }
+
+  h3 span {
+    color: var(--color-accent-dark);
+    font-family: system-ui, sans-serif;
+    font-size: 0.85em;
+  }
+
+  .related-summary {
+    margin: 0 0 1rem;
+    color: var(--color-muted);
+    font-size: 0.91rem;
+    line-height: 1.5;
+  }
+
+  .related-topics {
+    margin: auto 0 0;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-muted);
+    font-size: 0.79rem;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 680px) {
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
