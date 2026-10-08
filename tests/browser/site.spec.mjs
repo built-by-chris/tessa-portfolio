@@ -19,12 +19,15 @@ for (const route of routes) {
 test('mobile menu opens and closes with Escape', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'mobile', 'Mobile-only interaction');
   await page.goto('/');
-  const toggle = page.getByRole('button', { name: 'Open navigation menu' });
+  const toggle = page.locator('.menu-toggle');
+  await expect(toggle).toHaveAccessibleName('Open navigation menu');
   await toggle.click();
   await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  await expect(toggle).toHaveAccessibleName('Close navigation menu');
   await expect(page.getByRole('navigation', { name: 'Primary navigation' }).getByRole('link', { name: 'Contact' })).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+  await expect(toggle).toHaveAccessibleName('Open navigation menu');
 });
 
 for (const route of ['/', '/about/', '/resume/', '/contact/']) {
