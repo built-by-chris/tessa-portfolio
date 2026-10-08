@@ -15,6 +15,19 @@ tags:
   - "Evidence evaluation"
 ---
 
+## Methods at a glance
+
+| Research question or task | Approach developed in coursework | Evidence and limits |
+| --- | --- | --- |
+| Diagnose underperformance in a working group | Observational case-study design with preliminary workflow coding | Proposed use of observations and organizational records; the case was hypothetical, not a completed field study. |
+| Understand veterans’ experience of PACT Act implementation | Survey population definition and operationalization of awareness, administrative difficulty, and satisfaction | Proposed questionnaire constructs; no survey responses or measured outcomes are claimed. |
+| Assess the Brookline Early Education Project | Appraisal of matched comparison and quasi-experimental reasoning | Evaluates threats to internal validity rather than making an original causal estimate. |
+| Evaluate claims about ultra-processed food and academic performance | Comparison of secondary reporting with the underlying observational study | Distinguishes association from causation and documents a revised assessment as stronger evidence became available. |
+
+### What an employer can evaluate
+
+This collection provides examples of **research scoping, measurement design, evidence appraisal, and methodological judgment**. It does not demonstrate that the proposed survey, organizational observation, or intervention was carried out. The value is in showing how research choices are explained, justified, and bounded.
+
 ## Overview
 
 Public administrators rarely work with perfectly controlled data or laboratory conditions. More often, they must make sense of incomplete records, organizational behavior, stakeholder experiences, observational evidence, and policy outcomes.
