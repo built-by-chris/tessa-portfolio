@@ -75,7 +75,7 @@ const date = entry.data.date
     <section class="page-section article-body">
       <div class="container">
         {entry.id === 'transgender-veterans-adaptive-leadership' && <CaseStudyVisual variant="adaptive" />}
-        <div class="prose">
+        <div class:list={['prose', { 'research-methods-prose': entry.id === 'applied-research-design-public-administration' }]}>
           <p class="adaptation-note">This page adapts an academic project for the portfolio. It summarizes the work and its methods; the original document is not published here.</p>
           <Content />
           <nav class="article-next" aria-label="After this project">
@@ -202,6 +202,141 @@ const date = entry.data.date
   .prose :global(p),
   .prose :global(li) {
     color: #352d3a;
+  }
+
+
+  /* The research-methods matrix is a concise index to the detailed case study below. */
+  .research-methods-prose :global(table) {
+    width: 100%;
+    margin: 1.75rem 0 2.25rem;
+    border: 1px solid var(--color-border-strong);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 0.9rem;
+    overflow: hidden;
+    background: var(--color-surface);
+    box-shadow: 0 10px 30px rgba(56, 35, 68, 0.045);
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .research-methods-prose :global(th),
+  .research-methods-prose :global(td) {
+    padding: 1.05rem 1.1rem;
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: break-word;
+  }
+
+  .research-methods-prose :global(thead th) {
+    background: var(--color-accent-soft);
+    color: var(--color-accent-dark);
+    font-size: 0.81rem;
+    font-weight: 800;
+    line-height: 1.35;
+  }
+
+  .research-methods-prose :global(th:not(:last-child)),
+  .research-methods-prose :global(td:not(:last-child)) {
+    border-right: 1px solid var(--color-border);
+  }
+
+  .research-methods-prose :global(tbody td) {
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text);
+  }
+
+  .research-methods-prose :global(tbody tr:nth-child(even)) {
+    background: var(--color-surface-soft);
+  }
+
+  .research-methods-prose :global(tbody td:first-child) {
+    width: 28%;
+    font-weight: 700;
+  }
+
+  .research-methods-prose :global(tbody td:nth-child(2)) {
+    width: 36%;
+  }
+
+  @media (min-width: 900px) {
+    .research-methods-prose :global(table) {
+      position: relative;
+      left: 50%;
+      width: min(62rem, calc(100vw - 3rem));
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 680px) {
+    .research-methods-prose :global(table) {
+      border: 0;
+      border-radius: 0;
+      background: none;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    /* Visually hide headings, retaining them for assistive technology. */
+    .research-methods-prose :global(thead) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .research-methods-prose :global(tbody) {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .research-methods-prose :global(tbody tr) {
+      display: grid;
+      gap: 0.8rem;
+      padding: 1.2rem;
+      border: 1px solid var(--color-border-strong);
+      border-radius: 0.9rem;
+      background: var(--color-surface-soft);
+    }
+
+    .research-methods-prose :global(tbody td),
+    .research-methods-prose :global(tbody td:first-child),
+    .research-methods-prose :global(tbody td:nth-child(2)) {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+    }
+
+    .research-methods-prose :global(tbody td:first-child) {
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 1.06rem;
+    }
+
+    .research-methods-prose :global(tbody td:nth-child(2)::before),
+    .research-methods-prose :global(tbody td:nth-child(3)::before) {
+      display: block;
+      margin-bottom: 0.15rem;
+      color: var(--color-accent-dark);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .research-methods-prose :global(tbody td:nth-child(2)::before) {
+      content: 'Approach';
+    }
+
+    .research-methods-prose :global(tbody td:nth-child(3)::before) {
+      content: 'Evidence and limits';
+    }
   }
 
   @media (max-width: 760px) {
