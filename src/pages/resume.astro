@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProofOfWork from '../components/ProofOfWork.astro';
 
 const skills = [
   'Policy & regulatory research',
@@ -171,6 +172,23 @@ const experience = [
       <ul class="skill-list">
         {skills.map((skill) => <li>{skill}</li>)}
       </ul>
+    </div>
+  </section>
+
+  <section class="page-section evidence-section" aria-labelledby="evidence-heading">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Evidence of analytical work</p>
+          <h2 id="evidence-heading">Examples behind the skills.</h2>
+        </div>
+        <p>
+          These selected graduate projects document analytical methods and proposed
+          approaches. They complement my professional operations experience without
+          representing classroom exercises as implemented workplace projects.
+        </p>
+      </div>
+      <ProofOfWork />
     </div>
   </section>
 

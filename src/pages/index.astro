@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WorkCard from '../components/WorkCard.astro';
+import ProofOfWork from '../components/ProofOfWork.astro';
 
 const writing = await getCollection('writing', ({ data }) => data.public && data.featured);
 const projects = await getCollection('projects', ({ data }) => data.public && data.featured);
@@ -100,6 +101,23 @@ const formatDate = (date?: Date) =>
           <p>Turning complex public problems into clear, structured analysis for academic and professional audiences.</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="page-section proof-section" aria-labelledby="proof-heading">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Methods in practice</p>
+          <h2 id="proof-heading">See the work behind the skills.</h2>
+        </div>
+        <p>
+          Selected graduate work shows how I frame public problems, assess evidence,
+          and develop proposals for institutional improvement. These are academic
+          analyses and designs, not claims of completed field implementations.
+        </p>
+      </div>
+      <ProofOfWork />
     </div>
   </section>
 

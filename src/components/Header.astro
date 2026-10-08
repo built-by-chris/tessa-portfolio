@@ -70,6 +70,12 @@ const isActive = (href: string) =>
       setMenu(button.getAttribute('aria-expanded') !== 'true');
     });
 
+    document.addEventListener('click', (event) => {
+      if (button.getAttribute('aria-expanded') === 'true' && event.target instanceof Node && !header.contains(event.target)) {
+        setMenu(false);
+      }
+    });
+
     nav.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => setMenu(false));
     });
