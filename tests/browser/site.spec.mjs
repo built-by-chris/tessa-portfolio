@@ -44,14 +44,16 @@ test('lilac brand bar stays visible above a pale full-width mobile dropdown', as
     const nav = header.getByRole('navigation', { name: 'Primary navigation' });
     await expect(nav).toBeVisible();
     expect(await background(header)).toBe('rgb(231, 222, 237)');
-    expect(await background(nav)).toBe('rgb(248, 246, 250)');
-
-    const geometry = await nav.evaluate((element) => {
-      const bounds = element.getBoundingClientRect();
-      return { left: bounds.left, right: bounds.right, viewport: window.innerWidth };
+    const dropdown = await nav.evaluate((element) => {
+      const style = getComputedStyle(element, '::before');
+      return {
+        background: style.backgroundColor,
+        width: Number.parseFloat(style.width),
+        viewport: window.innerWidth,
+      };
     });
-    expect(geometry.left).toBeCloseTo(0, 0);
-    expect(geometry.right).toBeCloseTo(geometry.viewport, 0);
+    expect(dropdown.background).toBe('rgb(248, 246, 250)');
+    expect(dropdown.width).toBeCloseTo(dropdown.viewport, 0);
   }
 });
 
