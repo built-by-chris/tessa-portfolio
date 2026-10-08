@@ -255,12 +255,27 @@ const isActive = (href: string) =>
     nav {
       display: none;
       grid-column: 1 / -1;
-      /* Extend the dropdown to both viewport edges, without changing the brand row. */
-      width: calc(100% + 2rem);
-      margin: -0.8rem -1rem 0;
-      padding: 1.45rem 1rem 0.85rem;
-      border-top: 1px solid var(--color-border);
+      min-width: 0;
+      width: 100%;
+      margin-top: -0.8rem;
+      padding: 1.45rem 0 0.85rem;
+      position: relative;
+      isolation: isolate;
+    }
+
+    /* Paint edge to edge without stretching the grid item or causing overflow. */
+    nav::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50%);
       background: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+      pointer-events: none;
     }
 
     .site-header[data-menu-open='true'] nav {
