@@ -231,6 +231,12 @@ const isActive = (href: string) =>
   }
 
   @media (max-width: 780px) {
+    /* Restore the original pale surface for the mobile header and expanded menu. */
+    .site-header {
+      background: color-mix(in srgb, var(--color-bg) 86%, transparent);
+      backdrop-filter: blur(18px);
+    }
+
     .header-inner {
       min-height: auto;
       display: grid;
