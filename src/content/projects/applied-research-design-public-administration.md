@@ -17,12 +17,12 @@ tags:
 
 ## Methods at a glance
 
-| Research question or task | Approach developed in coursework | Evidence and limits |
+| Research task | Approach | Evidence and limits |
 | --- | --- | --- |
-| Diagnose underperformance in a working group | Observational case-study design with preliminary workflow coding | Proposed use of observations and organizational records; the case was hypothetical, not a completed field study. |
-| Understand veterans’ experience of PACT Act implementation | Survey population definition and operationalization of awareness, administrative difficulty, and satisfaction | Proposed questionnaire constructs; no survey responses or measured outcomes are claimed. |
-| Assess the Brookline Early Education Project | Appraisal of matched comparison and quasi-experimental reasoning | Evaluates threats to internal validity rather than making an original causal estimate. |
-| Evaluate claims about ultra-processed food and academic performance | Comparison of secondary reporting with the underlying observational study | Distinguishes association from causation and documents a revised assessment as stronger evidence became available. |
+| Working-group underperformance | Observational case-study plan with workflow coding and record review. | Hypothetical case; no field observations collected. |
+| Veterans’ experience of the PACT Act | Survey population and measures for awareness, administrative difficulty, and satisfaction. | Questionnaire proposed, not administered; no outcomes measured. |
+| Brookline Early Education Project | Appraisal of a matched comparison and threats to causal inference. | Methodological critique; no original effect estimate. |
+| Food, academic performance, and research reporting | Comparison of secondary reporting with the underlying observational study. | Revised the critique after reviewing the study; association does not prove causation. |
 
 ### What an employer can evaluate
 
