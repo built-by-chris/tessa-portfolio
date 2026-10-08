@@ -15,10 +15,12 @@ const { items } = Astro.props;
     <div class="related-grid">
       {items.map((item) => (
         <article>
-          <p class="related-type">{item.label}</p>
-          <h3><a href={item.href}>{item.title} <span aria-hidden="true">↗</span></a></h3>
-          <p class="related-summary">{item.summary}</p>
-          <p class="related-topics">Shared topics: {item.sharedTags.slice(0, 2).join(', ')}</p>
+          <a class="related-link" href={item.href}>
+            <p class="related-type">{item.label}</p>
+            <h3>{item.title} <span aria-hidden="true">↗</span></h3>
+            <p class="related-summary">{item.summary}</p>
+            <p class="related-topics">Shared topics: {item.sharedTags.slice(0, 2).join(', ')}</p>
+          </a>
         </article>
       ))}
     </div>
@@ -43,13 +45,27 @@ const { items } = Astro.props;
     gap: 0.9rem;
   }
 
-  article {
+  .related-link {
     display: flex;
     flex-direction: column;
+    height: 100%;
     padding: 1.25rem;
     border: 1px solid var(--color-border);
     border-radius: 0.85rem;
     background: var(--color-surface-soft);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 160ms ease, background-color 160ms ease;
+  }
+
+  .related-link:hover,
+  .related-link:focus-visible {
+    border-color: var(--color-accent);
+    background: var(--color-accent-soft);
+  }
+
+  .related-link:focus-visible {
+    outline-offset: 3px;
   }
 
   .related-type {
@@ -67,12 +83,8 @@ const { items } = Astro.props;
     line-height: 1.25;
   }
 
-  h3 a {
-    color: var(--color-text);
-    text-decoration: none;
-  }
-
-  h3 a:hover {
+  .related-link:hover h3,
+  .related-link:focus-visible h3 {
     color: var(--color-accent-dark);
     text-decoration: underline;
   }
