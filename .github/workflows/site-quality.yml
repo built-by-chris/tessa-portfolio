@@ -1,0 +1,33 @@
+name: Site quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install site dependencies
+        run: npm ci
+      - name: Build Astro
+        run: npm run build
+      - name: Check generated site
+        run: npm run test:site
+      - name: Install CI-only browser tools
+        run: npm install --no-save --package-lock=false @playwright/test@1.55.0 @axe-core/playwright@4.10.1
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Check mobile layouts and accessibility
+        run: npx playwright test
