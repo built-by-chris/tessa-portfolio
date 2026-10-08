@@ -30,19 +30,28 @@ test('mobile menu opens and closes with Escape', async ({ page }, testInfo) => {
   await expect(toggle).toHaveAccessibleName('Open navigation menu');
 });
 
-test('desktop lilac header does not carry into the mobile menu', async ({ page }, testInfo) => {
+test('lilac brand bar stays visible above a pale full-width mobile dropdown', async ({ page }, testInfo) => {
   await page.goto('/');
   const header = page.locator('.site-header');
-  const background = async () => header.evaluate((element) => getComputedStyle(element).backgroundColor);
-  const initialBackground = await background();
+  const background = async (element) => element.evaluate((node) => getComputedStyle(node).backgroundColor);
+
+  expect(await background(header)).toBe('rgb(231, 222, 237)');
 
   if (testInfo.project.name === 'mobile') {
-    expect(initialBackground).not.toBe('rgb(231, 222, 237)');
     await page.locator('.menu-toggle').click();
     await expect(header).toHaveAttribute('data-menu-open', 'true');
-    expect(await background()).toBe(initialBackground);
-  } else {
-    expect(initialBackground).toBe('rgb(231, 222, 237)');
+
+    const nav = header.getByRole('navigation', { name: 'Primary navigation' });
+    await expect(nav).toBeVisible();
+    expect(await background(header)).toBe('rgb(231, 222, 237)');
+    expect(await background(nav)).toBe('rgb(248, 246, 250)');
+
+    const geometry = await nav.evaluate((element) => {
+      const bounds = element.getBoundingClientRect();
+      return { left: bounds.left, right: bounds.right, viewport: window.innerWidth };
+    });
+    expect(geometry.left).toBeCloseTo(0, 0);
+    expect(geometry.right).toBeCloseTo(geometry.viewport, 0);
   }
 });
 
