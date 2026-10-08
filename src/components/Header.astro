@@ -80,6 +80,13 @@ const isActive = (href: string) =>
       link.addEventListener('click', () => setMenu(false));
     });
 
+    header.addEventListener('focusout', (event) => {
+      const next = event.relatedTarget;
+      if (button.getAttribute('aria-expanded') === 'true' && next instanceof Node && !header.contains(next)) {
+        setMenu(false);
+      }
+    });
+
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
         setMenu(false);
