@@ -2,6 +2,9 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CaseStudyVisual from '../../components/CaseStudyVisual.astro';
+import ArticleContents from '../../components/ArticleContents.astro';
+import RelatedWork from '../../components/RelatedWork.astro';
+import { getRelatedWork } from '../../lib/relatedWork';
 
 export async function getStaticPaths() {
   const entries = await getCollection('writing', ({ data }) => data.public);
@@ -12,7 +15,8 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+const relatedWork = await getRelatedWork('writing', entry.id, entry.data.tags);
 
 const date = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
@@ -79,7 +83,9 @@ const date = new Intl.DateTimeFormat('en-US', {
         {entry.id === 'single-payer-american-dream' && <CaseStudyVisual variant="capstone" />}
         <div class="prose">
           <p class="adaptation-note">This page is a portfolio adaptation of the work described below. A link to the original appears where it is publicly available.</p>
+          <ArticleContents headings={headings} />
           <Content />
+          <RelatedWork items={relatedWork} />
           <nav class="article-next" aria-label="After this piece">
             <a class="text-link" href="/writing">More writing</a>
             <a class="text-link" href="/contact">Get in touch</a>
