@@ -16,7 +16,7 @@ const isActive = (href: string) =>
 <header class="site-header" data-menu-open="false">
   <div class="container header-inner">
     <a class="brand" href="/" aria-label="Tessa Rouse home">
-      <span class="brand-mark" aria-hidden="true">TR</span>
+      <img class="brand-mark" src="/images/tr-monogram.svg" alt="" aria-hidden="true" width="65" height="59" decoding="async" />
       <span class="brand-copy">
         <strong>Tessa Rouse</strong>
         <span>Public administration & policy</span>
@@ -104,8 +104,7 @@ const isActive = (href: string) =>
     top: 0;
     z-index: 50;
     border-bottom: 1px solid color-mix(in srgb, var(--color-border) 86%, transparent);
-    background: color-mix(in srgb, var(--color-bg) 86%, transparent);
-    backdrop-filter: blur(18px);
+    background: #e7deed;
   }
 
   .header-inner {
@@ -125,20 +124,10 @@ const isActive = (href: string) =>
   }
 
   .brand-mark {
-    width: 2.4rem;
-    height: 2.4rem;
-    display: grid;
-    place-items: center;
+    width: 3.25rem;
+    height: 2.95rem;
     flex: 0 0 auto;
-    border: 1px solid var(--color-border-strong);
-    border-radius: 999px;
-    background: var(--color-surface);
-    color: var(--color-accent-dark);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    box-shadow: 0 6px 18px rgba(56, 35, 68, 0.06);
+    object-fit: contain;
   }
 
   .brand-copy {
