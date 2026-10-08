@@ -97,13 +97,17 @@ const sections = headings.filter((heading) => heading.depth === 2 && heading.slu
   }
 
   li {
-    padding: 0.25rem 0;
+    padding: 0;
     color: var(--color-accent-dark);
     font-size: 0.91rem;
     line-height: 1.45;
   }
 
   a {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.4rem 0.15rem;
     color: var(--color-accent-dark);
     font-weight: 650;
     text-decoration: none;

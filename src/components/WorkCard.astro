@@ -98,8 +98,14 @@ const { href, eyebrow, title, summary, meta, tags = [] } = Astro.props;
     font-weight: 800;
   }
 
-  .work-link:hover h2 {
+  .work-link:hover h2,
+  .work-link:focus-visible h2 {
     color: var(--color-accent-dark);
+  }
+
+  .work-link:focus-visible {
+    border-radius: 0.45rem;
+    background: var(--color-accent-soft);
   }
 
   @media (max-width: 680px) {
