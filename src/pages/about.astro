@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const aboutPhoto = '/images/tessa-about-2.jpeg';
+import { Image } from 'astro:assets';
+import aboutPhoto from '../assets/tessa-about-2.jpeg';
 ---
 
 <BaseLayout
@@ -26,7 +26,16 @@ const aboutPhoto = '/images/tessa-about-2.jpeg';
       </div>
 
       <figure class="about-photo">
-        <img src={aboutPhoto} alt="Tessa Rouse smiling in academic regalia" width="256" height="256" />
+        <Image
+          src={aboutPhoto}
+          alt="Tessa Rouse smiling in academic regalia"
+          width={960}
+          layout="constrained"
+          format="webp"
+          quality={82}
+          loading="eager"
+          fetchpriority="high"
+        />
       </figure>
     </div>
   </section>
@@ -361,7 +370,7 @@ const aboutPhoto = '/images/tessa-about-2.jpeg';
     background: var(--color-accent-soft);
   }
 
-  .about-photo img {
+  .about-photo :global(img) {
     width: 100%;
     height: auto;
     border: 1px solid var(--color-border-strong);
