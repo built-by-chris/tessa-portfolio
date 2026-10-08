@@ -30,6 +30,22 @@ test('mobile menu opens and closes with Escape', async ({ page }, testInfo) => {
   await expect(toggle).toHaveAccessibleName('Open navigation menu');
 });
 
+test('desktop lilac header does not carry into the mobile menu', async ({ page }, testInfo) => {
+  await page.goto('/');
+  const header = page.locator('.site-header');
+  const background = async () => header.evaluate((element) => getComputedStyle(element).backgroundColor);
+  const initialBackground = await background();
+
+  if (testInfo.project.name === 'mobile') {
+    expect(initialBackground).not.toBe('rgb(231, 222, 237)');
+    await page.locator('.menu-toggle').click();
+    await expect(header).toHaveAttribute('data-menu-open', 'true');
+    expect(await background()).toBe(initialBackground);
+  } else {
+    expect(initialBackground).toBe('rgb(231, 222, 237)');
+  }
+});
+
 for (const route of ['/', '/about/', '/resume/', '/contact/']) {
   test(route + ' has no automated WCAG A/AA violations', async ({ page }) => {
     await page.goto(route);
