@@ -38,12 +38,10 @@ These intersecting factors make Wichita useful for examining resilience as **mor
 
 ## Assessment dimensions
 
-| Dimension | What the project examines |
-| --- | --- |
-| **Hazard exposure** | Severe weather, flooding, extreme heat, and potentially exposed facilities |
-| **Social and spatial vulnerability** | Household resources, housing, age, disability, vehicle access, insurance, and the geographic distribution of vulnerability |
-| **Infrastructure and institutional capacity** | Water reliability, emergency warnings, healthcare access, public infrastructure, and agency coordination |
-| **Economic and social capacity** | Manufacturing concentration, community networks, public trust, knowledge transfer, and organizational learning |
+- **Hazard exposure:** Severe weather, flooding, extreme heat, and potentially exposed facilities.
+- **Social and spatial vulnerability:** Household resources, housing, age, disability, vehicle access, insurance, and the geographic distribution of vulnerability.
+- **Infrastructure and institutional capacity:** Water reliability, emergency warnings, healthcare access, public infrastructure, and agency coordination.
+- **Economic and social capacity:** Manufacturing concentration, community networks, public trust, knowledge transfer, and organizational learning.
 
 The framework draws on **Masterson et al. (2014)** to understand disaster vulnerability and inclusive planning, and **Wilson (2012)** to consider social learning, community resources, and the fit between policy and local conditions.
 
