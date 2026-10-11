@@ -205,6 +205,31 @@ import aboutPhoto from '../assets/tessa-about-2.jpeg';
           research, and building toward the kind of public-sector work I want to do long term.
         </p>
 
+        <section class="degree-progress" aria-labelledby="degree-progress-title">
+          <div class="degree-progress-heading">
+            <div>
+              <h3 id="degree-progress-title">MPA coursework progress</h3>
+              <p class="degree-progress-count"><strong>21 of 42 credits</strong> toward the degree</p>
+            </div>
+            <strong class="degree-progress-percentage">50%</strong>
+          </div>
+          <div
+            class="degree-progress-track"
+            role="progressbar"
+            aria-label="MPA coursework completed"
+            aria-valuenow="21"
+            aria-valuemin="0"
+            aria-valuemax="42"
+            aria-valuetext="21 of 42 credits of coursework completed, pending official posting"
+          >
+            <span class="degree-progress-fill"></span>
+          </div>
+          <p class="degree-progress-note">
+            Fall 2026 Session A coursework is complete. Final grades and credits are pending
+            official ASU posting.
+          </p>
+        </section>
+
         <div class="now-list">
           <article>
             <span>01</span>
@@ -552,6 +577,64 @@ import aboutPhoto from '../assets/tessa-about-2.jpeg';
 
   .now-intro {
     margin-bottom: 1.4rem;
+  }
+
+  .degree-progress {
+    margin: 1.35rem 0 1.6rem;
+    padding: 1.2rem 1.3rem;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 0.9rem;
+    background: var(--color-accent-soft);
+  }
+
+  .degree-progress-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .degree-progress-heading h3 {
+    margin: 0 0 0.3rem;
+    font-size: 1.08rem;
+  }
+
+  .degree-progress-count {
+    margin: 0;
+    font-size: 0.93rem;
+  }
+
+  .degree-progress-count strong {
+    color: var(--color-text);
+  }
+
+  .degree-progress-percentage {
+    color: var(--color-accent-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  .degree-progress-track {
+    height: 0.6rem;
+    margin: 1.05rem 0 0.75rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--color-surface);
+  }
+
+  .degree-progress-fill {
+    display: block;
+    width: 50%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--color-accent);
+  }
+
+  .degree-progress-note {
+    margin: 0;
+    font-size: 0.83rem;
+    line-height: 1.5;
   }
 
   .now-list {
